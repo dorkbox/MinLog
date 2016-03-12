@@ -36,6 +36,14 @@ public class Log {
 	/** True when the TRACE level will be logged. */
 	static public boolean TRACE = level <= LEVEL_TRACE;
 
+    /**
+     * Gets the version number.
+     */
+    public static
+    String getVersion() {
+        return "1.2";
+    }
+
 	/**
 	 * Sets the level to log. If a version of this class is being used that has a final log level, this has no affect.
 	 */
@@ -195,3 +203,4 @@ public class Log {
 		}
 	}
 }
+

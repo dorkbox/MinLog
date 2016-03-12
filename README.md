@@ -1,19 +1,28 @@
-Drop-in replacement for [minlog](http://code.google.com/p/minlog), forked from http://minlog.googlecode.com/svn using `git svn`.
+Drop-in replacement for [minlog](https://github.com/EsotericSoftware/minlog).
 
 * Logs through slf4j instead of printing directly to stdout
 * Suppresses no log levels at compile time so you can control them in your logging config instead
 
-```xml
-<dependency>
-  <groupId>com.esotericsoftware.minlog</groupId>
-  <artifactId>minlog</artifactId>
-  <version>1.2-slf4j-jdanbrown-0</version>
-</dependency>
 
-...
 
-<repository>
-  <id>premise</id>
-  <url>http://premise.artifactoryonline.com/premise/public</url>
-</repository>
+<h4>We now release to maven!</h4> 
+
 ```
+<dependency>
+  <groupId>com.dorkbox</groupId>
+  <artifactId>MinLog-SLF4J</artifactId>
+  <version>1.2</version>
+</dependency>
+```
+
+Or if you don't want to use Maven, you can access the files directly here:  
+https://oss.sonatype.org/content/repositories/releases/com/dorkbox/MinLog-SLF4J/  
+
+
+https://repo1.maven.org/maven2/org/slf4j/slf4j-api/
+
+
+<h2>License</h2>
+
+This project is distributed under the terms of the Apache v2.0 License. See file "LICENSE" for further references.
+

@@ -1,6 +1,0 @@
-*.jar
-*.class
-*.log
-*.tar.gz
-target/
-*.DS_Store
