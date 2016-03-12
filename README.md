@@ -4,14 +4,13 @@ Drop-in replacement for [minlog](https://github.com/EsotericSoftware/minlog).
 * Suppresses no log levels at compile time so you can control them in your logging config instead
 
 
-
 <h4>We now release to maven!</h4> 
 
 ```
 <dependency>
   <groupId>com.dorkbox</groupId>
   <artifactId>MinLog-SLF4J</artifactId>
-  <version>1.2</version>
+  <version>1.3</version>
 </dependency>
 ```
 
