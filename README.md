@@ -10,7 +10,7 @@ Drop-in replacement for [minlog](https://github.com/EsotericSoftware/minlog).
 <dependency>
   <groupId>com.dorkbox</groupId>
   <artifactId>MinLog-SLF4J</artifactId>
-  <version>1.4</version>
+  <version>1.5</version>
 </dependency>
 ```
 
