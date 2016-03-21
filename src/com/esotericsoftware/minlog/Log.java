@@ -25,17 +25,17 @@ package com.esotericsoftware.minlog;
  */
 public class Log {
 	/** No logging at all. */
-	static public final int LEVEL_NONE = 6;
+    public static final int LEVEL_NONE = 6;
 	/** Critical errors. The application may no longer work correctly. */
-	static public final int LEVEL_ERROR = 5;
+    public static final int LEVEL_ERROR = 5;
 	/** Important warnings. The application will continue to work correctly. */
-	static public final int LEVEL_WARN = 4;
+    public static final int LEVEL_WARN = 4;
 	/** Informative messages. Typically used for deployment. */
-	static public final int LEVEL_INFO = 3;
+    public static final int LEVEL_INFO = 3;
 	/** Debug messages. This level is useful during development. */
-	static public final int LEVEL_DEBUG = 2;
+    public static final int LEVEL_DEBUG = 2;
 	/** Trace messages. A lot of information is logged, so this level is usually only needed when debugging a problem. */
-	static public final int LEVEL_TRACE = 1;
+    public static final int LEVEL_TRACE = 1;
 
 	/**
 	 * The level of messages that will be logged. Compiling this and the booleans below as "final" will cause the compiler to
@@ -44,181 +44,262 @@ public class Log {
 	static private int level = LEVEL_TRACE; // Log everything to delegate control to slf4j
 
 	/** True when the ERROR level will be logged. */
-	static public boolean ERROR = level <= LEVEL_ERROR;
+    public static boolean ERROR = level <= LEVEL_ERROR;
 	/** True when the WARN level will be logged. */
-	static public boolean WARN = level <= LEVEL_WARN;
+    public static boolean WARN = level <= LEVEL_WARN;
 	/** True when the INFO level will be logged. */
-	static public boolean INFO = level <= LEVEL_INFO;
+    public static boolean INFO = level <= LEVEL_INFO;
 	/** True when the DEBUG level will be logged. */
-	static public boolean DEBUG = level <= LEVEL_DEBUG;
+    public static boolean DEBUG = level <= LEVEL_DEBUG;
 	/** True when the TRACE level will be logged. */
-	static public boolean TRACE = level <= LEVEL_TRACE;
+    public static boolean TRACE = level <= LEVEL_TRACE;
 
     /**
      * Gets the version number.
      */
     public static
     String getVersion() {
-        return "1.4";
+        return "1.5";
     }
 
-	/**
-	 * Sets the level to log. If a version of this class is being used that has a final log level, this has no affect.
-	 */
-	static public void set (int level) {
-		// Comment out method contents when compiling fixed level JARs.
-		Log.level = level;
-		ERROR = level <= LEVEL_ERROR;
-		WARN = level <= LEVEL_WARN;
-		INFO = level <= LEVEL_INFO;
-		DEBUG = level <= LEVEL_DEBUG;
-		TRACE = level <= LEVEL_TRACE;
-	}
+    /**
+     * Sets the level to log. If a version of this class is being used that has a final log level, this has no affect.
+     */
+    public static
+    void set(int level) {
+        // Comment out method contents when compiling fixed level JARs.
+        Log.level = level;
+        ERROR = level <= LEVEL_ERROR;
+        WARN = level <= LEVEL_WARN;
+        INFO = level <= LEVEL_INFO;
+        DEBUG = level <= LEVEL_DEBUG;
+        TRACE = level <= LEVEL_TRACE;
+    }
 
-	static public void NONE () {
-		set(LEVEL_NONE);
-	}
+    public static
+    void NONE() {
+        set(LEVEL_NONE);
+    }
 
-	static public void ERROR () {
-		set(LEVEL_ERROR);
-	}
+    public static
+    void ERROR() {
+        set(LEVEL_ERROR);
+    }
 
-	static public void WARN () {
-		set(LEVEL_WARN);
-	}
+    public static
+    void WARN() {
+        set(LEVEL_WARN);
+    }
 
-	static public void INFO () {
-		set(LEVEL_INFO);
-	}
+    public static
+    void INFO() {
+        set(LEVEL_INFO);
+    }
 
-	static public void DEBUG () {
-		set(LEVEL_DEBUG);
-	}
+    public static
+    void DEBUG() {
+        set(LEVEL_DEBUG);
+    }
 
-	static public void TRACE () {
-		set(LEVEL_TRACE);
-	}
+    public static
+    void TRACE() {
+        set(LEVEL_TRACE);
+    }
 
-	/**
-	 * Sets the logger that will write the log messages.
-	 */
-	static public void setLogger (Logger logger) {
-		Log.logger = logger;
-	}
+    private static Logger logger = new Logger();
 
-	static private Logger logger = new Logger();
+    /**
+     * Sets the logger that will write the log messages.
+     */
+    public static
+    void setLogger(Logger logger) {
+        Log.logger = logger;
+    }
 
-	static public void error (String message, Throwable ex) {
-		if (ERROR) logger.log(LEVEL_ERROR, null, message, ex);
-	}
+    public static
+    void error(String message, Throwable ex) {
+        if (ERROR) {
+            logger.log(LEVEL_ERROR, null, message, ex);
+        }
+    }
 
-	static public void error (String category, String message, Throwable ex) {
-		if (ERROR) logger.log(LEVEL_ERROR, category, message, ex);
-	}
+    public static
+    void error(String category, String message, Throwable ex) {
+        if (ERROR) {
+            logger.log(LEVEL_ERROR, category, message, ex);
+        }
+    }
 
-	static public void error (String message) {
-		if (ERROR) logger.log(LEVEL_ERROR, null, message, null);
-	}
+    public static
+    void error(String message) {
+        if (ERROR) {
+            logger.log(LEVEL_ERROR, null, message, null);
+        }
+    }
 
-	static public void error (String category, String message) {
-		if (ERROR) logger.log(LEVEL_ERROR, category, message, null);
-	}
+    public static
+    void error(String category, String message) {
+        if (ERROR) {
+            logger.log(LEVEL_ERROR, category, message, null);
+        }
+    }
 
-	static public void warn (String message, Throwable ex) {
-		if (WARN) logger.log(LEVEL_WARN, null, message, ex);
-	}
+    public static
+    void warn(String message, Throwable ex) {
+        if (WARN) {
+            logger.log(LEVEL_WARN, null, message, ex);
+        }
+    }
 
-	static public void warn (String category, String message, Throwable ex) {
-		if (WARN) logger.log(LEVEL_WARN, category, message, ex);
-	}
+    public static
+    void warn(String category, String message, Throwable ex) {
+        if (WARN) {
+            logger.log(LEVEL_WARN, category, message, ex);
+        }
+    }
 
-	static public void warn (String message) {
-		if (WARN) logger.log(LEVEL_WARN, null, message, null);
-	}
+    public static
+    void warn(String message) {
+        if (WARN) {
+            logger.log(LEVEL_WARN, null, message, null);
+        }
+    }
 
-	static public void warn (String category, String message) {
-		if (WARN) logger.log(LEVEL_WARN, category, message, null);
-	}
+    public static
+    void warn(String category, String message) {
+        if (WARN) {
+            logger.log(LEVEL_WARN, category, message, null);
+        }
+    }
 
-	static public void info (String message, Throwable ex) {
-		if (INFO) logger.log(LEVEL_INFO, null, message, ex);
-	}
+    public static
+    void info(String message, Throwable ex) {
+        if (INFO) {
+            logger.log(LEVEL_INFO, null, message, ex);
+        }
+    }
 
-	static public void info (String category, String message, Throwable ex) {
-		if (INFO) logger.log(LEVEL_INFO, category, message, ex);
-	}
+    public static
+    void info(String category, String message, Throwable ex) {
+        if (INFO) {
+            logger.log(LEVEL_INFO, category, message, ex);
+        }
+    }
 
-	static public void info (String message) {
-		if (INFO) logger.log(LEVEL_INFO, null, message, null);
-	}
+    public static
+    void info(String message) {
+        if (INFO) {
+            logger.log(LEVEL_INFO, null, message, null);
+        }
+    }
 
-	static public void info (String category, String message) {
-		if (INFO) logger.log(LEVEL_INFO, category, message, null);
-	}
+    public static
+    void info(String category, String message) {
+        if (INFO) {
+            logger.log(LEVEL_INFO, category, message, null);
+        }
+    }
 
-	static public void debug (String message, Throwable ex) {
-		if (DEBUG) logger.log(LEVEL_DEBUG, null, message, ex);
-	}
+    public static
+    void debug(String message, Throwable ex) {
+        if (DEBUG) {
+            logger.log(LEVEL_DEBUG, null, message, ex);
+        }
+    }
 
-	static public void debug (String category, String message, Throwable ex) {
-		if (DEBUG) logger.log(LEVEL_DEBUG, category, message, ex);
-	}
+    public static
+    void debug(String category, String message, Throwable ex) {
+        if (DEBUG) {
+            logger.log(LEVEL_DEBUG, category, message, ex);
+        }
+    }
 
-	static public void debug (String message) {
-		if (DEBUG) logger.log(LEVEL_DEBUG, null, message, null);
-	}
+    public static
+    void debug(String message) {
+        if (DEBUG) {
+            logger.log(LEVEL_DEBUG, null, message, null);
+        }
+    }
 
-	static public void debug (String category, String message) {
-		if (DEBUG) logger.log(LEVEL_DEBUG, category, message, null);
-	}
+    public static
+    void debug(String category, String message) {
+        if (DEBUG) {
+            logger.log(LEVEL_DEBUG, category, message, null);
+        }
+    }
 
-	static public void trace (String message, Throwable ex) {
-		if (TRACE) logger.log(LEVEL_TRACE, null, message, ex);
-	}
+    public static
+    void trace(String message, Throwable ex) {
+        if (TRACE) {
+            logger.log(LEVEL_TRACE, null, message, ex);
+        }
+    }
 
-	static public void trace (String category, String message, Throwable ex) {
-		if (TRACE) logger.log(LEVEL_TRACE, category, message, ex);
-	}
+    public static
+    void trace(String category, String message, Throwable ex) {
+        if (TRACE) {
+            logger.log(LEVEL_TRACE, category, message, ex);
+        }
+    }
 
-	static public void trace (String message) {
-		if (TRACE) logger.log(LEVEL_TRACE, null, message, null);
-	}
+    public static
+    void trace(String message) {
+        if (TRACE) {
+            logger.log(LEVEL_TRACE, null, message, null);
+        }
+    }
 
-	static public void trace (String category, String message) {
-		if (TRACE) logger.log(LEVEL_TRACE, category, message, null);
-	}
+    public static
+    void trace(String category, String message) {
+        if (TRACE) {
+            logger.log(LEVEL_TRACE, category, message, null);
+        }
+    }
 
-	private Log () {
-	}
+    private
+    Log() {
+    }
 
-	/**
+    /**
 	 * Performs the actual logging. Default implementation logs to slf4j. Extended and use {@link Log#logger} set to handle
 	 * logging differently.
 	 */
-	static public class Logger {
-		// Log as "com.esotericsoftware.minlog"
-		public final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(Logger.class.getPackage().getName());
+    public static class Logger {
+        // Log as "com.esotericsoftware.minlog"
+        public final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(Logger.class.getPackage()
+                                                                                             .getName());
 
-		public void log (int level, String category, String message, Throwable ex) {
-			if (level == LEVEL_NONE) {
-				return;
-			}
-			StringBuilder builder = new StringBuilder(256);
-			if (category != null) {
-				builder.append(category);
-				builder.append(": ");
-			}
-			builder.append(message);
-			String line = builder.toString();
+        public
+        void log(int level, String category, String message, Throwable ex) {
+            if (level == LEVEL_NONE) {
+                return;
+            }
+            StringBuilder builder = new StringBuilder(256);
+            if (category != null) {
+                builder.append(category);
+                builder.append(": ");
+            }
+            builder.append(message);
+            String line = builder.toString();
 
-			switch (level) {
-				case LEVEL_ERROR: logger.error (line, ex); break;
-				case LEVEL_WARN:  logger.warn  (line, ex); break;
-				case LEVEL_INFO:  logger.info  (line, ex); break;
-				case LEVEL_DEBUG: logger.debug (line, ex); break;
-				case LEVEL_TRACE: logger.trace (line, ex); break;
-			}
-		}
-	}
+            switch (level) {
+                case LEVEL_ERROR:
+                    logger.error(line, ex);
+                    break;
+                case LEVEL_WARN:
+                    logger.warn(line, ex);
+                    break;
+                case LEVEL_INFO:
+                    logger.info(line, ex);
+                    break;
+                case LEVEL_DEBUG:
+                    logger.debug(line, ex);
+                    break;
+                case LEVEL_TRACE:
+                    logger.trace(line, ex);
+                    break;
+            }
+        }
+    }
 }
 
