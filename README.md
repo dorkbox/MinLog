@@ -23,5 +23,5 @@ https://repo1.maven.org/maven2/org/slf4j/slf4j-api/
 
 <h2>License</h2>
 
-This project is distributed under the terms of the BSD 3-clause License. See file "LICENSE" for further references.
+This project is © 2008 Nathan Sweet (contributors Dan Brown and dorkbox llc), and is distributed under the terms of the BSD 3-clause License. See file "LICENSE" for further references.
 
