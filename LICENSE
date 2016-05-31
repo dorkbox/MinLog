@@ -4,6 +4,7 @@
       Copyright 2008, Nathan Sweet
        Dan Brown
        dorkbox, llc
+        Drop-in replacement for MinLog to log through SLF4j.
 
 
     - SLF4J - MIT License
