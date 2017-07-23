@@ -7,11 +7,14 @@ Drop-in replacement for [minlog](https://github.com/EsotericSoftware/minlog).
 <h4>We now release to maven!</h4> 
 
 ```
-<dependency>
-  <groupId>com.dorkbox</groupId>
-  <artifactId>MinLog-SLF4J</artifactId>
-  <version>1.9</version>
-</dependency>
+<dependencies>
+    ...
+    <dependency>
+      <groupId>com.dorkbox</groupId>
+      <artifactId>MinLog-SLF4J</artifactId>
+      <version>1.9</version>
+    </dependency>
+</dependencies>
 ```
 
 Or if you don't want to use Maven, you can access the files directly here:  
