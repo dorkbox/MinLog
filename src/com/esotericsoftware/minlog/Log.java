@@ -19,8 +19,6 @@
  */
 package com.esotericsoftware.minlog;
 
-import dorkbox.util.Version;
-
 /**
  * A low overhead, lightweight logging system.
  * @author Nathan Sweet <misc@n4te.com>
@@ -61,8 +59,8 @@ public class Log {
      * Gets the version number.
      */
     public static
-    Version getVersion() {
-        return new Version("1.11");
+    String getVersion() {
+        return "1.12";
     }
 
     /**
