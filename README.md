@@ -17,8 +17,18 @@ Drop-in replacement for [minlog](https://github.com/EsotericSoftware/minlog).
 </dependencies>
 ```
 
+  
+Gradle Info
+---------
+````
+dependencies {
+    ...
+    compile 'com.dorkbox:MinLog-SLF4J:1.12'
+}
+````
+
 Or if you don't want to use Maven, you can access the files directly here:  
-https://oss.sonatype.org/content/repositories/releases/com/dorkbox/MinLog-SLF4J/  
+https://repo1.maven.org/maven2/com/dorkbox/MinLog-SLF4J/  
 
 
 https://repo1.maven.org/maven2/org/slf4j/slf4j-api/
