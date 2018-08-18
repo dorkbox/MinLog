@@ -17,7 +17,6 @@ Drop-in replacement for [minlog](https://github.com/EsotericSoftware/minlog).
 </dependencies>
 ```
 
-  
 Gradle Info
 ---------
 ````
