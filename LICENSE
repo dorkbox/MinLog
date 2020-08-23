@@ -1,14 +1,15 @@
- - MinLog-SLF4J - 
+ - MinLog-SLF4J - Drop-in replacement for MinLog to log through SLF4j.
+   [BSD 3-Clause License]
    https://git.dorkbox.com/dorkbox/MinLog-SLF4J
    https://github.com/EsotericSoftware/minlog
-   Copyright 2008 - BSD 3-Clause License
-     dorkbox, llc
+   Copyright 2020
+     Dorkbox LLC
      Nathan Sweet
      Dan Brown
-   Drop-in replacement for MinLog to log through SLF4j.
 
-
- - SLF4J - 
-   http://www.slf4j.org
-   Copyright 2008 - MIT License
-     QOS.ch
+   Extra license information
+     - SLF4J - Simple facade or abstraction for various logging frameworks
+       [MIT License]
+       http://www.slf4j.org
+       Copyright 2019
+         QOS.ch
