@@ -25,10 +25,11 @@ import java.time.Instant
 plugins {
     java
 
+    id("com.dorkbox.CrossCompile") version "1.1"
     id("com.dorkbox.GradleUtils") version "1.10"
     id("com.dorkbox.Licensing") version "2.3"
     id("com.dorkbox.VersionUpdate") version "2.0"
-    id("com.dorkbox.GradlePublish") version "1.6.1"
+    id("com.dorkbox.GradlePublish") version "1.7"
 }
 
 object Extras {
