@@ -26,8 +26,8 @@ plugins {
     java
 
     id("com.dorkbox.CrossCompile") version "1.1"
-    id("com.dorkbox.GradleUtils") version "1.10"
-    id("com.dorkbox.Licensing") version "2.3"
+    id("com.dorkbox.GradleUtils") version "1.11"
+    id("com.dorkbox.Licensing") version "2.4"
     id("com.dorkbox.VersionUpdate") version "2.0"
     id("com.dorkbox.GradlePublish") version "1.7"
 }
@@ -36,7 +36,7 @@ object Extras {
     // set for the project
     const val description = "Drop-in replacement for MinLog to log through SLF4j."
     const val group = "com.dorkbox"
-    const val version = "1.2"
+    const val version = "2.0"
 
     // set as project.ext
     const val name = "MinLog-SLF4J"

@@ -17,7 +17,7 @@ Drop-in replacement for [minlog](https://github.com/EsotericSoftware/minlog).
     <dependency>
       <groupId>com.dorkbox</groupId>
       <artifactId>MinLog-SLF4J</artifactId>
-      <version>1.12</version>
+      <version>2.0</version>
     </dependency>
 </dependencies>
 ```
@@ -27,7 +27,7 @@ Gradle Info
 ````
 dependencies {
     ...
-    compile 'com.dorkbox:MinLog-SLF4J:1.12'
+    compile 'com.dorkbox:MinLog-SLF4J:2.0'
 }
 ````
 
