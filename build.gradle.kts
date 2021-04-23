@@ -23,24 +23,21 @@ import java.time.Instant
 ///////////////////////////////
 
 plugins {
-    java
-
-    id("com.dorkbox.CrossCompile") version "1.1"
-    id("com.dorkbox.GradleUtils") version "1.11"
-    id("com.dorkbox.Licensing") version "2.4"
-    id("com.dorkbox.VersionUpdate") version "2.0"
-    id("com.dorkbox.GradlePublish") version "1.7"
+    id("com.dorkbox.GradleUtils") version "2.5.149"
+    id("com.dorkbox.Licensing") version "2.6"
+    id("com.dorkbox.VersionUpdate") version "2.3"
+    id("com.dorkbox.GradlePublish") version "1.11"
 }
 
 object Extras {
     // set for the project
     const val description = "Drop-in replacement for MinLog to log through SLF4j."
     const val group = "com.dorkbox"
-    const val version = "2.0"
+    const val version = "2.1"
 
     // set as project.ext
     const val name = "MinLog-SLF4J"
-    const val id = "MinLog-SLF4J"
+    const val id = "MinLog"
     const val vendor = "Dorkbox LLC"
     const val vendorUrl = "https://dorkbox.com"
     const val url = "https://git.dorkbox.com/dorkbox/MinLog-SLF4J"
@@ -52,9 +49,8 @@ object Extras {
 /////  assign 'Extras'
 ///////////////////////////////
 GradleUtils.load("$projectDir/../../gradle.properties", Extras)
-GradleUtils.fixIntellijPaths()
-GradleUtils.defaultResolutionStrategy()
-GradleUtils.compileConfiguration(JavaVersion.VERSION_1_6)
+GradleUtils.compileConfiguration(JavaVersion.VERSION_1_8)
+GradleUtils.defaults()
 
 
 licensing {
@@ -67,23 +63,6 @@ licensing {
         url("https://github.com/EsotericSoftware/minlog")
     }
 }
-
-sourceSets {
-    main {
-        java {
-            setSrcDirs(listOf("src"))
-
-            // want to include java files for the source. 'setSrcDirs' resets includes...
-            include("**/*.java")
-        }
-    }
-}
-
-repositories {
-    mavenLocal() // this must be first!
-    jcenter()
-}
-
 
 tasks.jar.get().apply {
     manifest {
