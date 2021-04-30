@@ -23,7 +23,7 @@ import java.time.Instant
 ///////////////////////////////
 
 plugins {
-    id("com.dorkbox.GradleUtils") version "2.5.149"
+    id("com.dorkbox.GradleUtils") version "2.6"
     id("com.dorkbox.Licensing") version "2.6"
     id("com.dorkbox.VersionUpdate") version "2.3"
     id("com.dorkbox.GradlePublish") version "1.11"
@@ -37,7 +37,7 @@ object Extras {
 
     // set as project.ext
     const val name = "MinLog-SLF4J"
-    const val id = "MinLog"
+    const val id = "MinLog" // this is the maven ID!
     const val vendor = "Dorkbox LLC"
     const val vendorUrl = "https://dorkbox.com"
     const val url = "https://git.dorkbox.com/dorkbox/MinLog-SLF4J"
@@ -82,7 +82,7 @@ tasks.jar.get().apply {
 }
 
 dependencies {
-    implementation("org.slf4j:slf4j-api:1.7.30")
+    implementation("org.slf4j:slf4j-api:1.8.0-beta4")
 }
 
 publishToSonatype {
