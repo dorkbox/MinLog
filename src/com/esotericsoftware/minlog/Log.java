@@ -60,7 +60,7 @@ public class Log {
      */
     public static
     String getVersion() {
-        return "2.2";
+        return "2.3";
     }
 
     /**
