@@ -15,7 +15,7 @@ Maven Info
     <dependency>
       <groupId>com.dorkbox</groupId>
       <artifactId>MinLog</artifactId>
-      <version>2.3</version>
+      <version>2.4</version>
     </dependency>
 </dependencies>
 ```
@@ -25,7 +25,7 @@ Gradle Info
 ```
 dependencies {
     ...
-    implementation("com.dorkbox:MinLog:2.3")
+    implementation("com.dorkbox:MinLog:2.4")
 }
 ```
 
