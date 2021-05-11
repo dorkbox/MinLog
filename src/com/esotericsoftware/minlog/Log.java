@@ -63,6 +63,11 @@ public class Log {
         return "2.3";
     }
 
+    static {
+        // Add this project to the updates system, which verifies this class + UUID + version information
+        dorkbox.updates.Updates.INSTANCE.add(Log.class, "967eddd028ae46f884d9a04ff6e3b9d3", getVersion());
+    }
+
     /**
      * Sets the level to log. If a version of this class is being used that has a final log level, this has no affect.
      */
