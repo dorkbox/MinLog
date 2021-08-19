@@ -22,6 +22,9 @@ import java.time.Instant
 ////// RELEASE : (to sonatype/maven central), <'publish and release' - 'publishToSonatypeAndRelease'>
 ///////////////////////////////
 
+gradle.startParameter.showStacktrace = ShowStacktrace.ALWAYS   // always show the stacktrace!
+
+
 plugins {
     id("com.dorkbox.GradleUtils") version "2.8"
     id("com.dorkbox.Licensing") version "2.7"
