@@ -26,10 +26,10 @@ gradle.startParameter.showStacktrace = ShowStacktrace.ALWAYS   // always show th
 
 
 plugins {
-    id("com.dorkbox.GradleUtils") version "2.8"
-    id("com.dorkbox.Licensing") version "2.7"
-    id("com.dorkbox.VersionUpdate") version "2.3"
-    id("com.dorkbox.GradlePublish") version "1.11"
+    id("com.dorkbox.GradleUtils") version "2.16"
+    id("com.dorkbox.Licensing") version "2.12"
+    id("com.dorkbox.VersionUpdate") version "2.4"
+    id("com.dorkbox.GradlePublish") version "1.12"
 }
 
 object Extras {
@@ -82,6 +82,8 @@ tasks.jar.get().apply {
         attributes["Implementation-Vendor"] = Extras.vendor
     }
 }
+
+
 
 dependencies {
     implementation("org.slf4j:slf4j-api:1.8.0-beta4")
