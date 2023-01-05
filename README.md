@@ -2,7 +2,6 @@ Drop-in replacement for [minlog](https://github.com/EsotericSoftware/minlog).
 
 ###### [![Dorkbox](https://badge.dorkbox.com/dorkbox.svg "Dorkbox")](https://git.dorkbox.com/dorkbox/MinLog) [![Github](https://badge.dorkbox.com/github.svg "Github")](https://github.com/dorkbox/MinLog) [![Gitlab](https://badge.dorkbox.com/gitlab.svg "Gitlab")](https://gitlab.com/dorkbox/MinLog)
 
-
 * Logs through slf4j instead of printing directly to stdout
 * Suppresses no log levels at compile time so you can control them in your logging config instead
 
