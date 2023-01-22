@@ -26,7 +26,7 @@ gradle.startParameter.showStacktrace = ShowStacktrace.ALWAYS   // always show th
 
 
 plugins {
-    id("com.dorkbox.GradleUtils") version "3.8"
+    id("com.dorkbox.GradleUtils") version "3.9"
     id("com.dorkbox.Licensing") version "2.19.1"
     id("com.dorkbox.VersionUpdate") version "2.5"
     id("com.dorkbox.GradlePublish") version "1.17"
@@ -83,11 +83,10 @@ tasks.jar.get().apply {
     }
 }
 
-
-
 dependencies {
-    implementation("org.slf4j:slf4j-api:1.8.0-beta4")
-    implementation("com.dorkbox:Updates:1.1")
+    api("com.dorkbox:Updates:1.1")
+
+    api("org.slf4j:slf4j-api:1.8.0-beta4")
 }
 
 publishToSonatype {
