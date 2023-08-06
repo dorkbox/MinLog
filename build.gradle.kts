@@ -82,7 +82,7 @@ tasks.jar.get().apply {
 dependencies {
     api("com.dorkbox:Updates:1.1")
 
-    api("org.slf4j:slf4j-api:1.8.0-beta4")
+    api("org.slf4j:slf4j-api:2.0.7")
 }
 
 publishToSonatype {
