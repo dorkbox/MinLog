@@ -36,7 +36,7 @@ object Extras {
     // set for the project
     const val description = "Drop-in replacement for MinLog to log through SLF4j."
     const val group = "com.dorkbox"
-    const val version = "2.7"
+    const val version = "3.0"
 
     // set as project.ext
     const val name = "MinLog-SLF4J"
@@ -51,7 +51,7 @@ object Extras {
 ///////////////////////////////
 GradleUtils.load("$projectDir/../../gradle.properties", Extras)
 GradleUtils.defaults()
-GradleUtils.compileConfiguration(JavaVersion.VERSION_21)
+GradleUtils.compileConfiguration(JavaVersion.VERSION_25)
 
 
 licensing {
