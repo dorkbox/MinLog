@@ -24,32 +24,39 @@ gradle.startParameter.showStacktrace = ShowStacktrace.ALWAYS   // always show th
 
 
 plugins {
-    id("com.dorkbox.GradleUtils") version "4.6"
+    id("com.dorkbox.GradleUtils") version "4.8"
     id("com.dorkbox.Licensing") version "3.1"
-    id("com.dorkbox.VersionUpdate") version "3.1"
-    id("com.dorkbox.GradlePublish") version "2.0"
+    id("com.dorkbox.VersionUpdate") version "3.2"
+    id("com.dorkbox.GradlePublish") version "2.2"
 
     kotlin("jvm") version "2.3.0"
 }
 
-object Extras {
-    // set for the project
-    const val description = "Drop-in replacement for MinLog to log through SLF4j."
-    const val group = "com.dorkbox"
-    const val version = "3.0"
 
-    // set as project.ext
-    const val name = "MinLog-SLF4J"
-    const val id = "MinLog" // this is the maven ID!
-    const val vendor = "Dorkbox LLC"
-    const val vendorUrl = "https://dorkbox.com"
-    const val url = "https://git.dorkbox.com/dorkbox/MinLog-SLF4J"
+GradleUtils.load {
+    group = "com.dorkbox"
+    id = "MinLog" // this is the maven ID!
+
+    description = "Drop-in replacement for MinLog to log through SLF4j"
+    name = "MinLog-SLF4J"
+    version = "3.0"
+
+    vendor = "Dorkbox LLC"
+    vendorUrl = "https://dorkbox.com"
+
+    url = "https://git.dorkbox.com/dorkbox/MinLog-SLF4J"
+
+    issueManagement {
+        url = "${url}/issues"
+        nickname = "Gitea Issues"
+    }
+
+    developer {
+        id = "dorkbox"
+        name = vendor
+        email = "email@dorkbox.com"
+    }
 }
-
-///////////////////////////////
-/////  assign 'Extras'
-///////////////////////////////
-GradleUtils.load("$projectDir/../../gradle.properties", Extras)
 GradleUtils.defaults()
 GradleUtils.compileConfiguration(JavaVersion.VERSION_25)
 
@@ -65,47 +72,9 @@ licensing {
     }
 }
 
-tasks.jar.get().apply {
-    manifest {
-        // https://docs.oracle.com/javase/tutorial/deployment/jar/packageman.html
-        attributes["Name"] = Extras.name
-
-        attributes["Specification-Title"] = Extras.name
-        attributes["Specification-Version"] = Extras.version
-        attributes["Specification-Vendor"] = Extras.vendor
-
-        attributes["Implementation-Title"] = "${Extras.group}.${Extras.id}"
-        attributes["Implementation-Version"] = GradleUtils.now()
-        attributes["Implementation-Vendor"] = Extras.vendor
-    }
-}
 
 dependencies {
     api("com.dorkbox:Updates:1.3")
 
     api("org.slf4j:slf4j-api:2.0.17")
-}
-
-mavenCentral {
-    groupId = Extras.group
-    artifactId = Extras.id
-    version = Extras.version
-
-    name = Extras.name
-    description = Extras.description
-    url = Extras.url
-
-    vendor = Extras.vendor
-    vendorUrl = Extras.vendorUrl
-
-    issueManagement {
-        url = "${Extras.url}/issues"
-        nickname = "Gitea Issues"
-    }
-
-    developer {
-        id = "dorkbox"
-        name = Extras.vendor
-        email = "email@dorkbox.com"
-    }
 }
